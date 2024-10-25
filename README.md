@@ -1,20 +1,20 @@
-## GenerateKey
+# GenerateKey
 
 GenerateKey is a simple Python tool designed to generate secure secret keys and user passwords. It can be used both as a command-line utility and as a library within other Python projects.
 
-# Features
+### Features
 
 •	Secret Key Generation: Create URL-safe base64-encoded secret keys of customizable byte length, suitable for cryptographic purposes such as signing tokens or encrypting data.
 •	User Password Generation: Generate random user passwords of customizable length, including uppercase and lowercase letters, digits, and punctuation symbols.
 
-# Installation
+### Installation
 
 You can install GenerateKey using pip:
 ```bash
 pip install generatekey
 ```
 
-# Usage
+### Usage
 
 Command-Line Interface
 
@@ -47,7 +47,7 @@ generatekey userpass --length 16
 ```
 
 
-# As a Python Module
+### As a Python Module
 
 You can also import GenerateKey into your Python projects:
 ```python
@@ -62,14 +62,14 @@ password = generate_user_password(length=16)
 print(f"User Password: {password}")
 ```
 
-# Requirements
+### Requirements
 
 •	Python 3.10 or higher
 
 
-Contributing
+### Contributing
 
-# Contributions are welcome! Please follow these steps:
+Contributions are welcome! Please follow these steps:
 
 1.	Fork the repository.
 2.	Create a new branch for your feature or bug fix.
@@ -77,27 +77,27 @@ Contributing
 4.	Push your branch to your forked repository.
 5.	Create a pull request to the main repository.
 
-# Before submitting, ensure that:
+### Before submitting, ensure that:
 
 •	All tests pass.
 •	Your code follows the project’s coding style.
 •	You have updated the documentation if necessary.
 
-# License
+### License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [![LICENSE](https://github.com/mpita/generatekey/blob/master/LICENSE) file for details.
 
 
-# Acknowledgments
+### Acknowledgments
 
 •	Thanks to the contributors of open-source libraries used in this project.
 •	Inspired by the need for simple and secure key and password generation tools.
 
-# Support
+### Support
 
-If you encounter any issues or have questions, feel free to open an issue on the GitHub repository.
+If you encounter any issues or have questions, feel free to open an issue on the GitHub [![repository](https://github.com/mpita/generatekey/issues).
 
-# Changelog
+### Changelog
 
 Version 0.1.0
 
