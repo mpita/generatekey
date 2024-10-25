@@ -1,14 +1,16 @@
 """
 generatekey.core
 =======================
-This module provides functions to generate secret keys and user passwords. It can also be executed as a command-line tool.
+This module provides functions to generate secret keys and user passwords.
+It can also be executed as a command-line tool.
 """
 
-import secrets
-import base64
-import string
 import argparse
+import base64
+import secrets
+import string
 import sys
+
 
 def get_secret_key(nbytes: int = 64) -> str:
     """
@@ -32,10 +34,11 @@ def get_secret_key(nbytes: int = 64) -> str:
 
     if nbytes <= 0:
         raise ValueError("nbytes must be a positive integer")
-    
+
     key = secrets.token_bytes(nbytes)
     key_base64 = base64.urlsafe_b64encode(key).decode("utf-8")
     return key_base64
+
 
 def generate_user_password(length: int = 12) -> str:
     """
@@ -59,10 +62,11 @@ def generate_user_password(length: int = 12) -> str:
 
     if length <= 0:
         raise ValueError("length must be a positive integer")
-    
+
     characters = f"{string.ascii_letters}{string.digits}{string.punctuation}"
     password = "".join(secrets.choice(characters) for _ in range(length))
     return password
+
 
 def main():
     """
@@ -78,13 +82,9 @@ def main():
     parser = argparse.ArgumentParser(
         description="Generate secret keys and user passwords."
     )
-    subparsers = parser.add_subparsers(
-        title="Commands", dest="command", required=True
-    )
+    subparsers = parser.add_subparsers(title="Commands", dest="command", required=True)
 
-    parser_secretkey = subparsers.add_parser(
-        "secretkey", help="Generate a secret key."
-    )
+    parser_secretkey = subparsers.add_parser("secretkey", help="Generate a secret key.")
     parser_secretkey.add_argument(
         "--nbyte",
         type=int,
@@ -111,8 +111,9 @@ def main():
     else:
         parser.print_help()
         sys.exit(1)
-    
+
     print(out_str)
+
 
 if __name__ == "__main__":
     main()
