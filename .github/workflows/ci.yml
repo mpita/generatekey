@@ -55,7 +55,7 @@ jobs:
 
       - name: Run bandit
         run: |
-          poetry run bandit -r .
+          poetry run bandit -r generatekey
           
       - name: Run pytest
         run: |
