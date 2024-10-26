@@ -1,9 +1,9 @@
 name: Publish to PyPI
 
 on:
-  push:
-    tags:
-      - 'v*.*.*'
+    release:
+        types:
+        - created
 
 jobs:
   publish:
@@ -30,10 +30,9 @@ jobs:
         run: |
           poetry install --no-interaction --no-ansi
 
-      - name: Build package
+      - name: Publish
+        env:
+          PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
         run: |
-          poetry build
-
-      - name: Publish package to PyPI
-        run: |
-          poetry publish
+          poetry config pypi-token.pypi $PYPI_TOKEN
+          poetry publish --build
