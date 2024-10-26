@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "generatekey"
-version = "0.1.0"
+version = "0.1.1"
 description = "key generator"
 authors = ["Manuel Pita <mpita1984@gmail.com>"]
 readme = "README.md"
